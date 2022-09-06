@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./singlePost.css";
 
-const SinglePost = () => {
+export default function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
@@ -48,7 +49,7 @@ const SinglePost = () => {
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
-          <img className="singlePostImg" src={PF + post.photo} alt="" />
+          <img src={PF + post.photo} alt="" className="singlePostImg" />
         )}
         {updateMode ? (
           <input
@@ -60,7 +61,7 @@ const SinglePost = () => {
           />
         ) : (
           <h1 className="singlePostTitle">
-            {post.title}
+            {title}
             {post.username === user?.username && (
               <div className="singlePostEdit">
                 <i
@@ -76,13 +77,15 @@ const SinglePost = () => {
           </h1>
         )}
         <div className="singlePostInfo">
-          <span>
+          <span className="singlePostAuthor">
             Author:
             <Link to={`/?user=${post.username}`} className="link">
-              <b className="singlePostAuthor">{post.username}</b>
+              <b> {post.username}</b>
             </Link>
           </span>
-          <span>{new Date(post.createdAt).toDateString()}</span>
+          <span className="singlePostDate">
+            {new Date(post.createdAt).toDateString()}
+          </span>
         </div>
         {updateMode ? (
           <textarea
@@ -91,7 +94,7 @@ const SinglePost = () => {
             onChange={(e) => setDesc(e.target.value)}
           />
         ) : (
-          <p className="singlePostDesc">{post.desc}</p>
+          <p className="singlePostDesc">{desc}</p>
         )}
         {updateMode && (
           <button className="singlePostButton" onClick={handleUpdate}>
@@ -101,6 +104,4 @@ const SinglePost = () => {
       </div>
     </div>
   );
-};
-
-export default SinglePost;
+}
