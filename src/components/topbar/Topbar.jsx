@@ -2,9 +2,12 @@
 import "./topbar.css";
 import gokul from "./gokul.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 
 const Topbar = () => {
-  const user = false;
+  const { user } = useContext(Context);
+
   return (
     <div className="top">
       <div className="topLeft">
