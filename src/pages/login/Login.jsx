@@ -49,6 +49,10 @@ const Login = () => {
           Register
         </Link>
       </button>
+      <br />
+      <br />
+      <span>username: Gokul</span>
+      <span>password: 12345</span>
     </div>
   );
 };

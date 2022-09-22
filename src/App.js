@@ -8,6 +8,7 @@ import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
+import About from "./components/About/About";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
         <Route path="/login" element={user ? <Home /> : <Login />} />
+        <Route path="/about" element={user ? <About /> : <About />} />
         <Route path="/write" element={user ? <Write /> : <Register />} />
         <Route path="/setting" element={user ? <Settings /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />

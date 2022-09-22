@@ -7,7 +7,8 @@
   flex-direction: column;
   align-items: center;
   font-family: "Lora", serif;
-  color: #444;
+  color: #9d0f0f;
+  font-size: 20px;
 }
 
 .headerTitleSm {
@@ -18,13 +19,16 @@
 
 .headerTitleLg {
   position: absolute;
-  top: 17%;
+  top: 16%;
   font-size: 100px;
+  font-family: "Lora", serif;
+
+  color: #8b9cb9;
 }
 
 .headerImg {
   width: 100%;
-  height: 450px;
+  height: 500px;
   margin-top: 80px;
-  object-fit: cover;
+  object-fit: fill;
 }

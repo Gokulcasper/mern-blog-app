@@ -8,7 +8,7 @@
 .postImg {
   width: 385px;
   height: 280px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 7px;
 }
 

@@ -63,6 +63,10 @@ const Register = () => {
           Something went wrong!
         </span>
       )}
+
+      <br />
+      <br />
+      <span>Go To Login Page Use That LoginID</span>
     </div>
   );
 };

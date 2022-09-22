@@ -3,6 +3,7 @@ import "./topbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Topbar = () => {
   const { user, dispatch } = useContext(Context);
@@ -14,10 +15,15 @@ const Topbar = () => {
   return (
     <div className="top">
       <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
+        <a href="https://www.linkedin.com/in/gokulraj-p-8a426820a/">
+          <FaLinkedin className="facebook_T" />
+        </a>
+        <a href="https://github.com/Gokulcasper">
+          <FaGithub className="github_T" />
+        </a>
+        <a href="mailto:gokulcasper@gmail.com">
+          <FaEnvelope className="mail_T" />
+        </a>
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -26,8 +32,10 @@ const Topbar = () => {
               HOME
             </Link>
           </li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">CONTACT</li>
+          <Link className="link" to="/about">
+            <li className="topListItem">ABOUT</li>
+          </Link>
+          {/* <li className="topListItem">CONTACT</li> */}
           <li className="topListItem">
             <Link className="link" to="/write">
               WRITE
